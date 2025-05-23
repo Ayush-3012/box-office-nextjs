@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import Showcard from "../components/Showcard";
+import Showcard from "../components/Show/Showcard";
 import { useSelector } from "react-redux";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
+import Navbar from "../components/Navbar";
 
 const ShowPage = () => {
   const { shows } = useSelector((state) => state.shows);
-
+  
   return (
     <>
       <div className="flex flex-col relative items-center justify-center">
@@ -17,8 +18,9 @@ const ShowPage = () => {
           </Link>
         </div>
         {shows.length > 0 ? (
-          <div className="flex mx-2 flex-col items-center justify-center my-2">
-            <h1 className="text-4xl underline my-4 px-4 tracking-wider py-2 text-white font-serif">
+          <div className="flex mx-2 flex-col my-2">
+            <Navbar />
+            <h1 className="text-4xl underline mt-4 px-4 py-2 text-white font-serif">
               Found Shows
             </h1>
             <Showcard shows={shows} />
@@ -26,7 +28,7 @@ const ShowPage = () => {
         ) : (
           <div className="flex flex-col w-full h-full items-center justify-center my-8">
             <h1 className="text-4xl my-8 font-mono text-fuchsia-500 animate-bounce">
-              Nothing to display in shows{" "}
+              Nothing to display in shows
             </h1>
             <Link
               href="/"

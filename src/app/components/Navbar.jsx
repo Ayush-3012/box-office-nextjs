@@ -21,7 +21,7 @@ const Navbar = () => {
             href="/starred/"
             className="bg-red-300 hover:bg-fuchsia-500 hover:text-white hover:scale-110 transition ease-in-out duration-300 px-4 py-1 rounded-lg text-xl"
           >
-            Starred
+            Favourites
           </Link>
         </div>
       </div>
