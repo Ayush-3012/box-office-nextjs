@@ -16,12 +16,24 @@ const ShowPage = () => {
             <IoArrowBackCircleSharp className="text-4xl group-hover:scale-110" />
           </Link>
         </div>
-        {shows.length > 0 && (
+        {shows.length > 0 ? (
           <div className="flex mx-2 flex-col items-center justify-center my-2">
             <h1 className="text-4xl underline my-4 px-4 tracking-wider py-2 text-white font-serif">
               Found Shows
             </h1>
             <Showcard shows={shows} />
+          </div>
+        ) : (
+          <div className="flex flex-col w-full h-full items-center justify-center my-8">
+            <h1 className="text-4xl my-8 font-mono text-fuchsia-500 animate-bounce">
+              Nothing to display in shows{" "}
+            </h1>
+            <Link
+              href="/"
+              className="rounded-lg p-4 bg-emerald-400 hover:bg-rose-400 text-fuchsia-700 hover:scale-x-110 duration-150 transition-all"
+            >
+              Return to Home page
+            </Link>
           </div>
         )}
       </div>

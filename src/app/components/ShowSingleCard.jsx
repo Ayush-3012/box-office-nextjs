@@ -3,14 +3,14 @@
 import Link from "next/link";
 import ShowInfo from "./ShowInfo";
 
-const ShowSingleCard = ({ showId, show, index }) => {
+const ShowSingleCard = ({ show, index }) => {
   const imgUrl = show.image
     ? show.image.medium
     : "https://demofree.sirv.com/nope-not-here.jpg";
 
   return (
     <Link
-      href={`shows/${showId}`}
+      href={`/shows/${show.id}`}
       className="bg-slate-800 cursor-pointer font-serif rounded-2xl hover:shadow-[1px_1px_20px_rgb(52,211,153)] hover:-translate-y-3 transition ease-in-out duration-300"
     >
       <h4 className="text-white text-2xl text-center">{index + 1}.</h4>

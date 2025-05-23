@@ -39,7 +39,7 @@ const Fetch = () => {
             placeholder="Search For Shows..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="focus:shadow-md focus:shadow-emerald-400 w-80 bg-white rounded-lg outline-none px-3 py-2"
+            className="focus:shadow-md focus:shadow-emerald-400 w-80 bg-white rounded-lg outline-none px-3 py-2 max-md:w-72 max-sm:w-56"
           />
           <button
             type="submt"

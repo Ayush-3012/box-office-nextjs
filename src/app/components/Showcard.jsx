@@ -9,7 +9,6 @@ const Showcard = ({ shows }) => {
         {shows?.map((item, index) => (
           <ShowSingleCard
             key={index}
-            showId={item.show.id}
             show={item.show}
             index={index}
           />
