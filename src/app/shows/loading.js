@@ -1,9 +1,7 @@
-"use client";
-
 import { Reuleaux } from "ldrs/react";
 import "ldrs/react/Reuleaux.css";
 
-const Loader = () => {
+export default function loading() {
   return (
     <>
       <div className="flex items-center h-96 justify-center">
@@ -18,6 +16,4 @@ const Loader = () => {
       </div>
     </>
   );
-};
-
-export default Loader;
+}

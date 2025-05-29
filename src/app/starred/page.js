@@ -1,14 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
-import Navbar from "../components/Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { setShows } from "@/store/showSlice";
-import Showcard from "../components/Show/Showcard";
+import ShowSingleCard from "../components/Show/ShowSingleCard";
 
 const LikedShows = () => {
   const dispatch = useDispatch();
   const { shows } = useSelector((state) => state.shows);
+  const fromSavedShows = true;
 
   useEffect(() => {
     const allFavShows = localStorage.getItem("FavShows");
@@ -17,17 +17,25 @@ const LikedShows = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center flex-col gap-4 p-2">
-        <Navbar />
-      </div>
       <div className="flex mx-2">
         <h1 className="text-4xl underline px-4 tracking-wider py-2 text-white font-serif">
           Liked Shows
         </h1>
       </div>
-      {shows.length > 0 && (
+      {shows?.length > 0 && (
         <div className="mx-6">
-          <Showcard shows={shows} fromSavedShows={true} />
+          <>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 justify-center items-center">
+              {shows?.map((item, index) => (
+                <ShowSingleCard
+                  key={index}
+                  show={fromSavedShows ? item : item.show}
+                  index={index}
+                  fromSavedShows={fromSavedShows}
+                />
+              ))}
+            </div>
+          </>
         </div>
       )}
     </>
