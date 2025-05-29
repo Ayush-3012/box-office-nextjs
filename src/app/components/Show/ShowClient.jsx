@@ -27,7 +27,6 @@ const ShowClient = ({ shows, fromSavedShows = false }) => {
         </div>
         {reduxShows.length > 0 ? (
           <div className="flex mx-2 flex-col my-2">
-            <Navbar />
             <h1 className="text-4xl underline mt-4 px-4 py-2 text-white font-serif">
               Found Shows
             </h1>
